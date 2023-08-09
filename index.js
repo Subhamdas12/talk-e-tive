@@ -134,7 +134,7 @@ const io = require("socket.io")(socketIo, {
   pingTimeout: 60000,
   cors: {
     origin: "http://localhost:3000",
-    // credentials: true,
+    credentials: true,
   },
 });
 
