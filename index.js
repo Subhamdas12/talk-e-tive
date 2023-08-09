@@ -24,7 +24,7 @@ server.use(
   session({
     secret: "keyboard cat",
     resave: false, // don't save session if unmodified
-    saveUninitialized: false, // don't create session until something stored
+    saveUninitialized: false,
   })
 );
 server.use(passport.authenticate("session"));
