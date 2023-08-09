@@ -28,7 +28,7 @@ server.use(
   })
 );
 server.use(passport.authenticate("session"));
-server.use(express.static(path.resolve(__dirname, "build")));
+server.use(express.static(path.resolve(__dirname, "frontend/build")));
 server.use(cookieParser());
 server.use(cors());
 server.use(express.urlencoded({ limit: "30mb", extended: false }));
@@ -52,7 +52,7 @@ server.use("/chats", isAuth(), chatRouter.router);
 server.use("/messages", isAuth(), messageRouter.router);
 
 server.get("*", (req, res) =>
-  res.sendFile(path.resolve("build", "index.html"))
+  res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
 );
 
 passport.use(
